@@ -58,9 +58,9 @@
       var gapTime = () => {
 
         var startTime= '2017-02-15 00:00:00';  
-        var endTime = new Date();  
-        var gapTimestamp = endTime.getTime() - new Date(startTime).getTime();        
-      
+        var endTime = new Date();
+        var gapTimestamp = endTime.getTime() - new Date(startTime.substr(0,10)+"T"+startTime.substr(11,8)).getTime();        
+        
         //计算出相差天数  
         var days=Math.floor(gapTimestamp/(24*3600*1000));
     
@@ -84,6 +84,8 @@
         }
 
       }
+
+      console.log(gapTime());
 
       var gap = () => {
         var gap = gapTime();
