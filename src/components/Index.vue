@@ -57,35 +57,33 @@
 
       var gapTime = () => {
 
-        var startTime = '2017-02-15 00:00:00';  
+        var startTime = '2017-02-15';  
         var endTime = new Date();
-        var gapTimestamp = endTime.getTime() - new Date(startTime.substr(0,10)+"T"+startTime.substr(11,8)).getTime();        
-        
+        var gapTimestamp = endTime.getTime() - new Date(2017, 2, 15, 0, 0, 0).getTime();        
+
         //计算出相差天数  
         var days=Math.floor(gapTimestamp/(24*3600*1000));
     
         //计算出小时数  
         var leave1=gapTimestamp%(24*3600*1000);
-        var hours=Math.floor(leave1/(3600*1000))  
-        
+        var hours=Math.floor(leave1/(3600*1000));
+
         //计算相差分钟数  
-        var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数  
-        var minutes=Math.floor(leave2/(60*1000))  
+        var leave2=leave1%(3600*1000);        //计算小时数后剩余的毫秒数  
+        var minutes=Math.floor(leave2/(60*1000));
 
         //计算相差秒数  
-        var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数  
-        var seconds=Math.round(leave3/1000)
+        var leave3=leave2%(60*1000);      //计算分钟数后剩余的毫秒数  
+        var seconds=Math.round(leave3/1000);
 
         return {
           days,
           minutes,
-          hours: hours + 8,
+          hours,
           seconds
         }
 
       }
-
-      console.log(gapTime());
 
       var gap = () => {
         var gap = gapTime();
