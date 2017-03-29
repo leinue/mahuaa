@@ -57,7 +57,7 @@
 
       var gapTime = () => {
 
-        var startTime= '2017-02-15 00:00:00';  
+        var startTime = '2017-02-15 00:00:00';  
         var endTime = new Date();
         var gapTimestamp = endTime.getTime() - new Date(startTime.substr(0,10)+"T"+startTime.substr(11,8)).getTime();        
         
@@ -79,7 +79,7 @@
         return {
           days,
           minutes,
-          hours,
+          hours: hours + 8,
           seconds
         }
 
