@@ -59,7 +59,7 @@
 
         var startTime = '2017-02-15';  
         var endTime = new Date();
-        var gapTimestamp = endTime.getTime() - new Date(2017, 2, 15, 0, 0, 0).getTime();        
+        var gapTimestamp = endTime.getTime() - new Date(2017, 1, 15, 0, 0, 0).getTime();        
 
         //计算出相差天数  
         var days=Math.floor(gapTimestamp/(24*3600*1000));
